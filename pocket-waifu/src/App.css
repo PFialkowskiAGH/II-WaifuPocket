@@ -1,0 +1,10 @@
+#app-wrapper{
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+#app-wrapper>h1{
+  color: pink;
+}
+
