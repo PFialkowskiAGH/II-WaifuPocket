@@ -1,0 +1,28 @@
+.tittle h1 {
+    color: pink;
+
+}
+
+.navigator ul {
+    display: flex;   
+    justify-content:center;    
+    padding: 0;
+    gap: 1rem;
+}
+
+.navigator li {
+    color: white;
+    font-size: 1.5rem;
+    list-style: none;
+    display: inline;  
+}
+.navigator a{
+    color:inherit;
+    justify-content: center;
+    transition: transform .2s;
+    padding: .25rem;
+}
+
+.navigator a:hover{
+    transform: scale(1.2);
+}
