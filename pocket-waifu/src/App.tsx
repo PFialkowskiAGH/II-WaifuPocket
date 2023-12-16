@@ -11,11 +11,13 @@ function App() {
   return (
     <div id ='app-wrapper'>      
       <NaviBar /> 
+      {/*<Scroll>*/}
       <Routes>
         <Route path='/' element= {<Home />} />
         <Route path='/browse' element= {<Browse />} />
         <Route path='/search' element= {<Search /> } />
-      </Routes>           
+      </Routes>
+      {/*</Scroll>*/}           
     </div>
   );
 }

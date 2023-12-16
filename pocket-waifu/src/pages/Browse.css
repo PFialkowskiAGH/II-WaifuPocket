@@ -1,0 +1,13 @@
+/*body{
+    background-image: url("../../public/gojo_honored.jpg");
+    background-color: #cccccc;
+}*/
+.containerBrowse{
+        color:#000;
+        font-size: 14px;
+        text-align: center;        
+}
+ul{
+    list-style: none;
+}
+
