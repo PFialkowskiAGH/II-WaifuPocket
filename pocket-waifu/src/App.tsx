@@ -5,6 +5,7 @@ import Scroll from './Scroll';
 import Browse from './pages/Browse';
 import Search from './pages/Search';
 import Home from './pages/Home';
+import Overview from './pages/Overview';
 import { Route, Routes} from 'react-router-dom';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element= {<Home />} />
         <Route path='/browse' element= {<Browse />} />
         <Route path='/search' element= {<Search /> } />
+        <Route path='/overview/:id' element= {<Overview /> }/>
       </Routes>
       {/*</Scroll>*/}           
     </div>

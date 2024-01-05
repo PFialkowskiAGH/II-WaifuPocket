@@ -1,11 +1,13 @@
-import React, { Component, ChangeEvent } from "react";
+import  { Component, ChangeEvent } from "react";
 import './Browse.css';
 import {anime} from ".././anime";
 import SearchBox from ".././SearchBox";
 import background from "./gojo_honored.jpg";
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
+
 
 interface AppState {
-    anime: Array<{  id: number; title: string }>;
+    anime: Array<{  id: string; title: string }>;
     searchfield: string;
   }
 
@@ -37,7 +39,8 @@ class Browse extends Component <{}, AppState> {
             <h2>Filtered Anime Titles:</h2>
             <ul>
               {filteredAnime.map((anime) => (
-                <li key={anime.id}>{anime.title}</li>
+                  <Link to={"/overview/" + anime.id} key={anime.id}>{anime.title}</Link>          
+                                
               ))}
             </ul>            
           </div>
