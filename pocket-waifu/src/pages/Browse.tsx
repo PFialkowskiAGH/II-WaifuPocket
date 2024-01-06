@@ -30,17 +30,18 @@ class Browse extends Component <{}, AppState> {
         });
     
         return (
-          <div className="containerBrowse" style={{ backgroundImage: `url(${background})`,
-            backgroundRepeat: 'no-repeat',
+          <div className="containerBrowse" style={{ /*backgroundImage: `url(${background})`,
+            backgroundRepeat: 'no-repeat',*/
             width:'auto',
             backgroundSize: 'cover',
-            height:'100vh'  }}>
+            height:'82vh'  }}>
             <SearchBox searchChange={this.onSearchChange} />
-            <h2>Filtered Anime Titles:</h2>
-            <ul>
+            <h2>Anime Titles:</h2>
+            <ul>              
               {filteredAnime.map((anime) => (
+                <li>
                   <Link to={"/overview/" + anime.id} key={anime.id}>{anime.title}</Link>          
-                                
+                </li>              
               ))}
             </ul>            
           </div>

@@ -3,11 +3,23 @@
     background-color: #cccccc;
 }*/
 .containerBrowse{
-        color:#000;
+        color:white;
         font-size: 14px;
         text-align: center;        
 }
-ul{
+.containerBrowse h2{
+    font-size: 32px;
+}
+.containerBrowse ul{
     list-style: none;
+    padding-left: 0;
+}
+.containerBrowse li {
+    font-size: 24px;
+    font-weight: bold;    
+}
+.containerBrowse a {
+    text-decoration: none;
+    color: pink;
 }
 

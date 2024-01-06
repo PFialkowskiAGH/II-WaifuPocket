@@ -11,9 +11,10 @@ const SearchBox: React.FC<SearchBoxProps> = ({ searchChange }) => {
                 style={{height:'50px',
                 width: '50vh',
                 marginTop:'20px',
-                textAlign:'center'}}              
+                textAlign:'center',
+                fontSize:"20px",}}              
                 type="search" 
-                placeholder="search anime"
+                placeholder="type anime title"                
                 onChange={searchChange}
             />
         </div>        
