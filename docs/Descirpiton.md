@@ -1,2 +1,13 @@
 # Description
 Aplikacja ma wyświetlać anime i informację o nim :)
+
+## Dokumentacja Backend
+Użyte środowisko:
+1. Server Node.js (npm init -y  )
+2. Express (npm i express)
+3. Cors do komuniakcji z klientem (npm install cors --save)
+
+## Dokumentacja Frontend
+Użyte środowisko:
+1. React Native app
+2. Axios do komunikacji z serwerem (npm install axios)     

@@ -7,6 +7,8 @@ import Search from './pages/Search';
 import Home from './pages/Home';
 import Overview from './pages/Overview';
 import { Route, Routes} from 'react-router-dom';
+import { Server } from 'http';
+import TestServer from './pages/TestServer';
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route path='/browse' element= {<Browse />} />
         <Route path='/search' element= {<Search /> } />
         <Route path='/overview/:id' element= {<Overview /> }/>
+        <Route path='/testServer' element = {<TestServer/>}/>
       </Routes>
       {/*</Scroll>*/}           
     </div>
