@@ -7,6 +7,11 @@ Użyte środowisko:
 2. Express (npm i express)
 3. Cors do komuniakcji z klientem (npm install cors --save)
 
+## Baza
+Użyte środowisko:
+1. Mongoose (mongdb)
+2. Dotenv (do zmiennych)
+
 ## Dokumentacja Frontend
 Użyte środowisko:
 1. React Native app

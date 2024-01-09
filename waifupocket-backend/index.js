@@ -1,11 +1,15 @@
 const express = require("express");
 const cors = require("cors");
+const db = require("./db");
+const dotenv = require("dotenv");
+dotenv.config();
+const Anime = require('./anime.model');
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 
 const app = express();
 
-//Komuniakcja z aplikacją
+//communicattion with app
 const corsOptions ={
   origin: 'http://localhost:3000',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
@@ -13,11 +17,43 @@ const corsOptions ={
 }
 app.use(cors(corsOptions));
 
+//database
+db().then(async () => {
+  // Dodawanie przykładowego dokumentu do kolekcji "animeCollection"
+  const jjk = new Anime({
+    title: 'Jujutsu Kaisen',
+    description: 'Typ chciał zjeść KFC, ale zamiast strpisa zjadł palec czarownika z ery Heian, więc teraz musi zostać czarownikiem',
+    genres: ['action', 'dark fantasy', 'comedy'],
+    date: '2020',
+    episodes: 27,
+  });
+
+  // Zapisywanie rekordu do kolekcji "animeCollection" za pomocą async/await
+    const savedAnime = await jjk.save();
+    console.log('Dodano rekord do kolekcji "animeCollection":', savedAnime);
+});
+
 //GET
-app.get('/api/data', (req, res) => {
+app.get('/test/server', (req, res) => {
   // Handle your API logic here
   const data = { message: 'Hello from the server!' };
   res.json(data);
+});
+
+app.get('/test/database', async (req, res) => {
+  try {
+    // Pobieranie danych z kolekcji "animeCollection"
+    const animeList = await Anime.find();
+    console.log('Lista anime z kolekcji "animeCollection":', animeList);
+
+    // Odpowiedź JSON z listą anime
+    res.send(JSON.stringify(animeList));
+  } 
+  catch (error) {
+    console.error(error);
+    // Jeżeli wystąpi błąd, zwróć odpowiednią odpowiedź HTTP
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
 
 //LISTEN

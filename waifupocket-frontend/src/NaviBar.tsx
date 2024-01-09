@@ -11,7 +11,8 @@ const NaviBar = () =>{
                 <CustomLink to="/">Home</CustomLink>
                 <CustomLink to="/browse">Browse</CustomLink>
                 <CustomLink to="/search">Search</CustomLink>     
-                <CustomLink to="/testServer">Test Server</CustomLink>       
+                <CustomLink to="/testServer">Test Server</CustomLink>
+                <CustomLink to="/testDatabase">Test Database</CustomLink>
             </ul>
             </div>
             <audio src='yamete.mp3' controls />

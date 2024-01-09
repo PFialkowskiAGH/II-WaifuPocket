@@ -9,6 +9,7 @@ import Overview from './pages/Overview';
 import { Route, Routes} from 'react-router-dom';
 import { Server } from 'http';
 import TestServer from './pages/TestServer';
+import TestDatabase from './pages/TestDatabase';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/search' element= {<Search /> } />
         <Route path='/overview/:id' element= {<Overview /> }/>
         <Route path='/testServer' element = {<TestServer/>}/>
+        <Route path='/testDatabase' element = {<TestDatabase/>}/>
       </Routes>
       {/*</Scroll>*/}           
     </div>
