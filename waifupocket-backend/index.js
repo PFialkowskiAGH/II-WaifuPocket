@@ -18,20 +18,7 @@ const corsOptions ={
 app.use(cors(corsOptions));
 
 //database
-db().then(async () => {
-  // Dodawanie przykładowego dokumentu do kolekcji "animeCollection"
-  const jjk = new Anime({
-    title: 'Jujutsu Kaisen',
-    description: 'Typ chciał zjeść KFC, ale zamiast strpisa zjadł palec czarownika z ery Heian, więc teraz musi zostać czarownikiem',
-    genres: ['action', 'dark fantasy', 'comedy'],
-    date: '2020',
-    episodes: 27,
-  });
-
-  // Zapisywanie rekordu do kolekcji "animeCollection" za pomocą async/await
-    const savedAnime = await jjk.save();
-    console.log('Dodano rekord do kolekcji "animeCollection":', savedAnime);
-});
+db();
 
 //GET
 app.get('/test/server', (req, res) => {
