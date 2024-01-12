@@ -15,4 +15,8 @@ Użyte środowisko:
 ## Dokumentacja Frontend
 Użyte środowisko:
 1. React Native app
-2. Axios do komunikacji z serwerem (npm install axios)     
+2. Axios do komunikacji z serwerem (npm install axios)
+
+## Obrazy
+Obrazy w bazie danych trzymane są w postaci danych binarnych
+JPG brane są z folderu images

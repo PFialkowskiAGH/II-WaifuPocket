@@ -43,6 +43,42 @@ app.get('/test/database', async (req, res) => {
   }
 });
 
+app.get('/api/browse', async (req, res) => {
+  try {
+    // Pobieranie danych z kolekcji "animeCollection"
+    const animeList = await Anime.find().select("title");
+    console.log('Lista anime z kolekcji "animeCollection":', animeList);
+
+    // Odpowiedź JSON z listą anime
+    res.send(JSON.stringify(animeList));
+  } 
+  catch (error) {
+    console.error(error);
+    // Jeżeli wystąpi błąd, zwróć odpowiednią odpowiedź HTTP
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+app.get('/api/anime/:id', async (req, res) => {
+  const animeId = req.params.id;
+
+  try {
+    // Pobieranie konkretnego anime z kolekcji "animeCollection" na podstawie id
+    const anime = await Anime.findById(animeId);
+
+    if (!anime) {
+      return res.status(404).json({ error: 'Anime not found' });
+    }
+
+    // Odpowiedź JSON z obiektem anime
+    res.json(anime);
+  } catch (error) {
+    console.error(error);
+    // Jeżeli wystąpi błąd, zwróć odpowiednią odpowiedź HTTP
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 //LISTEN
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);

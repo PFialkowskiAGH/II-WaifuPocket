@@ -7,6 +7,7 @@ const AnimeSchema = new mongoose.Schema({
     genres: Array,
     date: Number,
     episodes: Number,
+    image: Buffer, // Atrybut przechowujący dane binarne obrazów
   });
   
   // Tworzenie modelu zdefiniowanego schematu

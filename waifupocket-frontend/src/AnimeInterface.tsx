@@ -5,4 +5,5 @@ export interface Anime {
     genres: string[];
     date: number;
     episodes: number;
+    image: Buffer;
   }
