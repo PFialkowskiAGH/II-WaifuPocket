@@ -15,7 +15,7 @@ const NaviBar = () =>{
                 <CustomLink to="/testDatabase">Test Database</CustomLink>
             </ul>
             </div>
-            <audio src='yamete.mp3' controls />
+            {/* <audio src='yamete.mp3' controls /> */}
         </div>
     );
 }
