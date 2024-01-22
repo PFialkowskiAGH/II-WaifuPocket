@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import './Overview.css';
-import {Anime} from "../AnimeInterface";
-//import { anime } from "../anime";
+import { Anime } from "../AnimeInterface";
 
 const Overview: React.FC = () => {
   const params = useParams<{ id: string }>();
@@ -22,8 +21,6 @@ const Overview: React.FC = () => {
       });
   }, [params.id]);
 
-  //const imageAddress = currentAnime ? currentAnime.image : "Loading...";
-
   return (
     <div className="container" style={{ color: "white", height: "81.8vh" }}>
       <h1 className="div1">{currentAnime ? currentAnime.title : "Loading..."}</h1>
@@ -33,10 +30,10 @@ const Overview: React.FC = () => {
       </div>
       <div className="div3">
         {currentAnime && (
-            <img
-              src={`data:image/jpeg;base64,${currentAnime.image}`}
-              alt={currentAnime.title}
-            />
+          <img
+            src={`data:image/jpeg;base64,${currentAnime.image}`}
+            alt={currentAnime.title}
+          />
         )}
       </div>
       <div className="div4">

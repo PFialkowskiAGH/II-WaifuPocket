@@ -59,6 +59,26 @@ app.get('/api/browse', async (req, res) => {
   }
 });
 
+//app.get('/api/anime/:id', async (req, res) => {
+  //const animeId = req.params.id;
+
+  //try {
+    // Pobieranie konkretnego anime z kolekcji "animeCollection" na podstawie id
+    //const anime = await Anime.findById(animeId);
+
+    //if (!anime) {
+      //return res.status(404).json({ error: 'Anime not found' });
+    //}
+
+    // Odpowiedź JSON z obiektem anime
+    //res.json(anime);
+  //} catch (error) {
+    //console.error(error);
+    // Jeżeli wystąpi błąd, zwróć odpowiednią odpowiedź HTTP
+    //res.status(500).json({ error: 'Internal Server Error' });
+  //}
+//});
+
 app.get('/api/anime/:id', async (req, res) => {
   const animeId = req.params.id;
 
@@ -70,8 +90,11 @@ app.get('/api/anime/:id', async (req, res) => {
       return res.status(404).json({ error: 'Anime not found' });
     }
 
-    // Odpowiedź JSON z obiektem anime
-    res.json(anime);
+    // Convert Buffer to base64
+    const base64Image = Buffer.from(anime.image).toString('base64');
+
+    // Include the base64-encoded image in the response
+    res.json({ ...anime.toObject(), image: base64Image });
   } catch (error) {
     console.error(error);
     // Jeżeli wystąpi błąd, zwróć odpowiednią odpowiedź HTTP
