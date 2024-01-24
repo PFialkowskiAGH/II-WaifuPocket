@@ -46,7 +46,7 @@ db().then(async () => {
       {
         title:'Berserk',
         description: 'Twisted dark fantasy, where deamons rule the world and humans can swing a two-meter iron plate like a sword',
-        genres: ['Fantasy','Horror', 'Action'],
+        genres: ['dark fantasy','Horror', 'Action'],
         date: '2016',
         episodes: 12,
         image: Buffer.from(binaryImageData4)
@@ -61,7 +61,7 @@ db().then(async () => {
       },
       {
         title:'Ghost in the Shell SAC',
-        description: '',
+        description: 'A future in which androids live alongside humans. However, someone is trying to use them to get rid of the living beings.',
         genres: ['Action', 'Sci-Fi', 'Mystery'],
         date: '2002',
         episodes: 26,

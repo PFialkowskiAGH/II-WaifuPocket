@@ -1,3 +1,4 @@
+
 import React, { Component, ChangeEvent } from "react";
 import './Browse.css';
 import SearchBox from "../SearchBox";

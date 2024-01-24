@@ -59,6 +59,22 @@ app.get('/api/browse', async (req, res) => {
   }
 });
 
+app.get('/api/search', async (req, res) => {
+  try {
+    // Pobieranie danych z kolekcji "animeCollection"
+    const animeList = await Anime.find();
+    console.log('Lista anime z kolekcji "animeCollection":', animeList);
+
+    // Odpowiedź JSON z listą anime
+    res.json(animeList);
+  } 
+  catch (error) {
+    console.error(error);
+    // Jeżeli wystąpi błąd, zwróć odpowiednią odpowiedź HTTP
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 //app.get('/api/anime/:id', async (req, res) => {
   //const animeId = req.params.id;
 
