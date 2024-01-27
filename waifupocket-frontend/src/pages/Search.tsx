@@ -7,6 +7,7 @@ import { Anime } from "../AnimeInterface";
 interface AppState {
   anime: Anime[];
   selectedGenre: string | null;
+  loading: boolean;
 }
 
 class Search extends Component<{}, AppState> {
@@ -15,6 +16,7 @@ class Search extends Component<{}, AppState> {
     this.state = {
       anime: [],
       selectedGenre: null,
+      loading: true,
     };
   }
 
@@ -31,9 +33,10 @@ class Search extends Component<{}, AppState> {
           genres: anime.genres || [] 
         };
       });
-      this.setState({ anime: animeData });
+      this.setState({ anime: animeData, loading: false }); // Set loading to false when data is fetched
     } catch (error) {
       console.error(error);
+      this.setState({ loading: false }); // Set loading to false in case of an error
     }
   }
 
@@ -45,7 +48,11 @@ class Search extends Component<{}, AppState> {
   };
 
   render() {
-    const { anime, selectedGenre } = this.state;
+    const { anime, selectedGenre, loading } = this.state;
+
+    if (loading) {
+      return <div>Loading...</div>; // Display loading message while data is being fetched
+    }
 
     const filteredAnime = anime.filter((anime) => {
         const hasSelectedGenre = selectedGenre ? (anime.genres && anime.genres.some(g => g.toLowerCase().replace(/\s/g, '') === selectedGenre)) : true;
